@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_08_17_211402) do
   create_table "desserts", force: :cascade do |t|
     t.string "name"
     t.string "recipe"
+    t.string "photo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -68,7 +69,8 @@ ActiveRecord::Schema.define(version: 2020_08_17_211402) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password"
-    t.string "name"
+    t.string "first_name"
+    t.string "last_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
