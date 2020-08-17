@@ -1,0 +1,5 @@
+<h1><%=@dessert.name%></h1><br><br>
+
+<image src="<%=(url_for(@dessert.photo))%>"><br><br>
+
+<%=link_to "recipe", @dessert.recipe, target: :_blank%>
