@@ -1,0 +1,16 @@
+<h1>Login Page</h1>
+
+<h2>Login</h2>
+
+<%= form_tag sessions_path do %>
+    <lable>UserName:</lable><br>
+    <%= text_field_tag :username %><br>
+    <br>
+    <lable>Password:</lable><br>
+    <%= password_field_tag :password %><br>
+    <br>
+    <%= submit_tag "Submit" %> 
+<% end %>
+
+
+<h2><%= link_to "Create an Account", new_user_path %></h2>
