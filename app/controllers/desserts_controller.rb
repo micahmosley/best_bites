@@ -6,14 +6,18 @@ class DessertsController < ApplicationController
     end 
 
     def new 
+        # will not let you create a new dessert if you are not logged in
+        return head(:forbidden) unless session.include? :user_id
         @dessert=Dessert.new
     end 
 
     def show 
-
+        @fav_dessert=FavoriteDessert.find_or_create_by(dessert_id: @dessert.id)
+        binding.pry
     end 
 
     def create 
+        
         @dessert=Dessert.new(dessert_params)
         if @dessert.valid?
             # @dessert.photo.attach(params[:dessert][:photo])

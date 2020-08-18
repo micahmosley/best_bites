@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2020_08_18_164545) do
   create_table "desserts", force: :cascade do |t|
     t.string "name"
     t.string "recipe"
-    t.string "photo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -61,7 +60,6 @@ ActiveRecord::Schema.define(version: 2020_08_18_164545) do
   create_table "meals", force: :cascade do |t|
     t.string "name"
     t.string "recipe"
-    t.string "photo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

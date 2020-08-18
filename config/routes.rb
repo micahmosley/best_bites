@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   resources :sessions, only: [:create]
   get '/logout', to: 'sessions#destroy'
+  get '/', to: 'users#home', as: 'home'
 
   resources :users, only: [:new, :create, :show]
   resources :desserts
+  resources :favorite_desserts, only: [:create]
   
 end

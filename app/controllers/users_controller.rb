@@ -3,13 +3,16 @@ class UsersController < ApplicationController
         @user = User.new
     end 
 
+    def home 
+
+    end 
+
     def create 
         @user = User.create(user_params)
 
         if @user.valid? == true 
             session[:user_id] = @user.id
-            binding.pry
-            #redirect to root 
+            redirect_to home_path
         else 
             flash[:errors] = @user.errors.full_messages
             render new_user_path

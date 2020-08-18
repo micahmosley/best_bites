@@ -3,3 +3,5 @@
 <image src="<%=(url_for(@dessert.photo))%>"><br><br>
 
 <%=link_to "recipe", @dessert.recipe, target: :_blank%>
+
+<%= render "favorite"%>

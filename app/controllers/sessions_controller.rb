@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         else 
             if @user.authenticate(params[:password])
                 session[:user_id] = @user.id
-                # redirect to root 
+                redirect_to home_path
             else 
                 flash[:errors] = "Sorry, user with that password does not exist"
                 redirect_to login_path
