@@ -7,7 +7,7 @@ class DessertsController < ApplicationController
 
     def new 
         # will not let you create a new dessert if you are not logged in
-        # return head(:forbidden) unless session.include? :user_id
+        return head(:forbidden) unless session.include? :user_id
         @dessert=Dessert.new
     end 
 

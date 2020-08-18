@@ -2,7 +2,7 @@ class FavoriteDessertsController < ApplicationController
 
     def create 
         # can only create if you are logged in 
-        # return head(:forbidden) unless session.include? :user_id
+        return head(:forbidden) unless session.include? :user_id
 
         #delete current favorite dessert if there is one
         current_favorite=FavoriteDessert.find(user_id: session[:user_id])
