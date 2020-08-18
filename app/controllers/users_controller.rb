@@ -1,4 +1,7 @@
 class UsersController < ApplicationController 
+
+    before_action :authentication_required, :current_user, only: [:home]
+
     def new 
         @user = User.new
     end 
@@ -19,8 +22,6 @@ class UsersController < ApplicationController
         end 
     end 
 
-    def show 
-    end 
 
     private 
 

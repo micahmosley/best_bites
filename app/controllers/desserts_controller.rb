@@ -1,6 +1,8 @@
 class DessertsController < ApplicationController
    
+    before_action :authentication_required, :current_user
     before_action :find_dessert, only: [:show, :edit, :update, :delete]
+
     def index 
         @desserts=Dessert.all
     end 
