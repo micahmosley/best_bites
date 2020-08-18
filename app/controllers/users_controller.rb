@@ -5,10 +5,15 @@ class UsersController < ApplicationController
 
     def create 
         @user = User.create(user_params)
-        #should add some validations in user model and check to see if the 
-        # user that was created was valid, hense actually created. If it was, 
-        # we'd redirect to user profile page or main page. If not, render new
-        # user page again with errors displayed. 
+
+        if @user.valid? == true 
+            session[:user_id] = @user.id
+            binding.pry
+            #redirect to root 
+        else 
+            flash[:errors] = @user.errors.full_messages
+            render new_user_path
+        end 
     end 
 
     def show 
