@@ -1,5 +1,7 @@
 class FavoriteDessertsController < ApplicationController
 
+    before_action :authentication_required, :current_user
+
     def create 
         # can only create if you are logged in 
         # return head(:forbidden) unless session.include? :user_id

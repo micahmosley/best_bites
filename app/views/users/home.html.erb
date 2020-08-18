@@ -1,1 +1,9 @@
-This will be the profile page
+<h1>BestBites Main Menu</h1>
+
+<% if @current_user == User.last %>
+    <h3>Welcome to BestBites, <%= @current_user.first_name%>!</h3>
+<% else %>
+    <h3>Welcome back to BestBites, <%= @current_user.first_name%>!</h3>
+<% end %>
+<br>
+<%= link_to "Log Out", logout_path %> 

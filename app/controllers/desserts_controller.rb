@@ -1,5 +1,6 @@
 class DessertsController < ApplicationController
    
+    before_action :authentication_required, :current_user
     before_action :find_dessert, only: [:show, :edit, :update, :delete]
     before_action :fav_dessert, only: [:new, :show]
     def index 
