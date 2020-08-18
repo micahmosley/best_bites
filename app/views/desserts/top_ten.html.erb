@@ -1,0 +1,10 @@
+<ol>
+<% @top_ten.each do |dessert_id|%>
+    <li>
+    <%dessert=Dessert.find(dessert_id)%>
+    <%=dessert.name%><br>
+    <%="#{dessert.number_of_favorites} favorites!!!"%><br>
+    <%= link_to "See_#{dessert.name}", dessert_path(dessert)%><br><br><br>
+    </li>
+<%end%>
+</ol>
