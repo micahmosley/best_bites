@@ -21,6 +21,9 @@
     <lable>Password:</lable><br>
     <%= f.password_field :password %><br>
     <br>
+    <lable>Password Confirmation:</lable><br>
+    <%= f.password_field :password_confirmation %><br>
+    <br>
     <%= f.submit "Create User" %>
     <br>
     <p><%= link_to "Back", login_path %></p>
