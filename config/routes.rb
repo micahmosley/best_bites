@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show]
   resources :desserts
+  resources :favorite_desserts, only: [:create]
   
 end
