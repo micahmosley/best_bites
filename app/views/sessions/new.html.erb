@@ -3,6 +3,13 @@
 <h2>Login</h2>
 
 <%= form_tag sessions_path do %>
+
+    <% if flash[:errors] %> 
+        <li><%= flash[:errors] %></li> 
+        <br>
+    <% end %>
+
+
     <lable>UserName:</lable><br>
     <%= text_field_tag :username %><br>
     <br>

@@ -4,10 +4,20 @@ class SessionsController < ApplicationController
     end 
 
     def create 
-        binding.pry
-        #from here, need to find user using params from form, and then 
-        # depending on if we are able to find it or not, render login_path
-        #or redirect to user profile page or main page 
+        @user = User.find_by(username: params[:username])
+
+        if @user == nil 
+            flash[:errors] = "Sorry, user with that username does not exist"
+            redirect_to login_path 
+        else 
+            if @user.authenticate(params[:password])
+                session[:user_id] = @user.id
+                # redirect to root 
+            else 
+                flash[:errors] = "Sorry, user with that password does not exist"
+                redirect_to login_path
+            end
+        end 
     end 
 
     def destroy 
