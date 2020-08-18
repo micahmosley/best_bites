@@ -1,0 +1,10 @@
+<h1> All Desserts </h1><br><br>
+
+<ul>
+<%@desserts.each do |dessert|%>
+    <li>
+        <%=link_to dessert.name, dessert_path(dessert), target: :_blank%>
+    </li>
+
+<%end%>
+</ul>
