@@ -21,7 +21,6 @@ class SessionsController < ApplicationController
     end 
 
     def destroy 
-        #eventual logout button will lead to this path
         reset_session 
         redirect_to login_path
     end  
