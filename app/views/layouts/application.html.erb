@@ -14,13 +14,16 @@
       <h1>Best Bites</h1><br>
       <div class="table">
       <ul>
+        
+      <% if !@current_user.nil? %>
         <li class="nav"><%=link_to "Home", home_path%></li>
+        <li class="nav"><%=link_to "Profile", user_path(@current_user)%></li>
         <li class="nav"><%=link_to "Desserts", desserts_path%></li>
         <li class="nav"><%=link_to "Top-Ten", top_ten_desserts_path%></li>
         <li class="nav"><%=link_to "Meals", meals_path%></li>
         <li class="nav"><%=link_to "Top-Ten", top_ten_meals_path%></li>
-        <li class="nav"><%=link_to "Profile", user_path(session[:user_id])%></li>
         <li class="nav"><%=link_to "Logout", logout_path%></li>
+      <% end %>
       </ul>
       </div>
   </header>
