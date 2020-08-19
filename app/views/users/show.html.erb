@@ -10,3 +10,7 @@
     <% @fav_dessert=FavoriteDessert.find_by(user_id: @current_user.id)%>
     <p class="desc"> Your current favorite dessert is <%=link_to Dessert.find(@fav_dessert.dessert_id).name, dessert_path(Dessert.find(@fav_dessert.dessert_id))%></p>
 <% end %>
+<br>
+<br>
+<br>
+<h3><%= link_to "Edit Account Info", edit_user_path%></h3>
