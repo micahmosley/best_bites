@@ -1,4 +1,12 @@
 <h1><%= @current_user.full_name%></h1>
 
-<p>This is <%= @current_user.full_name%>'s profile page that will display their current favorites</p>
 
+<% @fav_dessert=FavoriteDessert.find_by(user_id: @current_user.id)%>
+<% if @current_user.favorite_meal %>
+    <% @fav_meal=FavoriteMeal.find_by(user_id: @current_user.id)%>
+    <p class="desc"> Your current favorite meal is <%=link_to Meal.find(@fav_meal.meal_id).name, meal_path(Meal.find(@fav_meal.meal_id))%></p>
+<% end %>
+<% if @current_user.favorite_dessert %>
+    <% @fav_dessert=FavoriteDessert.find_by(user_id: @current_user.id)%>
+    <p class="desc"> Your current favorite dessert is <%=link_to Dessert.find(@fav_dessert.dessert_id).name, dessert_path(Dessert.find(@fav_dessert.dessert_id))%></p>
+<% end %>

@@ -11,17 +11,17 @@ class Meal < ApplicationRecord
         self.favorite_meals.length
     end 
 
-    def self.hash 
-        hash={}
+    def self.h
+        h={}
         self.all.each do |meal| 
-            hash[meal.id]=meal.number_of_favorites
+            h[meal.id]=meal.number_of_favorites
         end 
         #hash keys are dessert_ids and values are num of favorites ordered greatest to least
-        hash.sort_by {|k,v| -v}
+        h.sort_by {|k,v| -v}
     end 
 
     def self.top_ten_ids
-        ids=self.hash.map do |hash_pair|
+        ids=self.h.map do |hash_pair|
             hash_pair[0]
         end 
         #only take ten ids

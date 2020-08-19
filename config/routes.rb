@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   resources :desserts
   resources :meals
   resources :favorite_desserts, only: [:create, :update]
+  resources :favorite_meals, only: [:create, :update]
   
 end
