@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   
   get '/', to: 'users#home', as: 'home'
   get '/desserts/top_ten', to: 'desserts#top_ten', as: 'top_ten_desserts'
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :desserts
   resources :favorite_desserts, only: [:create, :update]
   
