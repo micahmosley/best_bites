@@ -1,0 +1,11 @@
+<h1><%=@meal.name%></h1><br><br>
+
+<image src="<%=(url_for(@meal.photo))%>"><br><br>
+
+<%=link_to "recipe", @meal.recipe, target: :_blank%>
+
+<% if @fav_meal.meal_id==@meal.id%>
+    <h1> Delicious! This is your Favorite Meal! </h1><br>
+<% else %> 
+    <%= render "favorite"%>
+<% end%>

@@ -1,10 +1,13 @@
 <h1> All Desserts </h1><br><br>
 
-<ol>
+<ul>
 <%@desserts.each do |dessert|%>
     <li>
-        <%=link_to dessert.name, dessert_path(dessert), target: :_blank%>
+        <%=link_to dessert.name, dessert_path(dessert)%>
     </li>
 
 <%end%>
-</ol>
+</ul>
+
+
+<p class="create">Don't see your favorite bites listed? Create it <%=link_to "here", new_dessert_path%></p>

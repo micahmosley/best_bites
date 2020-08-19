@@ -10,6 +10,21 @@
   </head>
 
   <body>
+  <header>
+      <h1>Best Bites</h1><br>
+      <div class="table">
+      <ul>
+        <li class="nav"><%=link_to "Profile", home_path%></li>
+        <li class="nav"><%=link_to "Desserts", desserts_path%></li>
+        <li class="nav"><%=link_to "Top-Ten", top_ten_desserts_path%></li>
+        <li class="nav"><%=link_to "Meals", meals_path%></li>
+        <li class="nav"><%=link_to "Top-Ten", top_ten_meals_path%></li>
+        <li class="nav"><%=link_to "Logout", logout_path%></li>
+      </ul>
+      </div>
+  </header>
+  <main>
     <%= yield %>
+  </main>
   </body>
 </html>
