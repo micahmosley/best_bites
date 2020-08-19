@@ -1,22 +1,17 @@
-<h1>BestBites Main Menu</h1>
+<br>
+<br>
+<br>
+<br>
 
 <% if @current_user == User.last %>
-    <h2>Welcome to BestBites, <%= @current_user.first_name%>!</h2>
-    <h3>BestBites is a simple web app that allows its users to post a favorite meal and dessert, along with their recipes!<br>
+    <h2>Welcome to Best Bites, <%= @current_user.first_name%>!</h2>
+    <h3>Best Bites is a simple web app that allows its users to post a favorite meal and dessert, along with their recipes!<br>
     Simply browse through our lists of user-created items and choose what best suits you, OR create your own!<br>
     Then we will see which meals and desserts are most favored in the community!<br>
     Click on any of the tabs above to get started!</h3>
 <% else %>
-    <h2>Welcome back to BestBites, <%= @current_user.first_name%>!</h2>
-    <h3>Click on any of the tabs above to continue!</h3>
+    <h2>Welcome back to Best Bites, <%= @current_user.first_name%>!</h2>
+    <h3>We are glad you decided to join us again!<br>
+    Click on any of the tabs above to continue!</h3>
 <% end %>
 <br>
-<%= link_to "Your Profile", user_path(@current_user) %><br>
-<br>
-<%= link_to "All Desserts", desserts_path %><br>
-<br>
-<%= link_to "Top Ten Desserts", top_ten_desserts_path %><br>
-<br>
-<%= link_to "Create a Dessert", new_dessert_path %><br>
-<br>
-<%= link_to "Log Out", logout_path %> 
