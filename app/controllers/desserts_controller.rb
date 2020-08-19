@@ -2,7 +2,7 @@ class DessertsController < ApplicationController
    
     before_action :authentication_required, :current_user
     before_action :find_dessert, only: [:show, :edit, :update, :delete]
-
+    before_action :fav_dessert, only: [:new, :show]
     def index 
         @desserts=Dessert.all
     end 
@@ -14,8 +14,7 @@ class DessertsController < ApplicationController
     end 
 
     def show 
-        @fav_dessert=FavoriteDessert.find_or_create_by(dessert_id: @dessert.id)
-        binding.pry
+        
     end 
 
     def create 
@@ -53,6 +52,10 @@ class DessertsController < ApplicationController
         redirect_to :desserts_path
     end 
 
+    def top_ten 
+        @top_ten=Dessert.top_ten
+    end 
+
     private 
         
         def find_dessert 
@@ -62,5 +65,9 @@ class DessertsController < ApplicationController
         def dessert_params 
             params.require(:dessert).permit(:name, :recipe, :photo)
         end 
+
+        def fav_dessert 
+            @fav_dessert=FavoriteDessert.find_or_create_by(user_id: session[:user_id])
+        end
 
 end 

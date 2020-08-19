@@ -6,10 +6,9 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   
   get '/', to: 'users#home', as: 'home'
+  get '/desserts/top_ten', to: 'desserts#top_ten', as: 'top_ten_desserts'
   resources :users, only: [:new, :create]
-
   resources :desserts
-  
-  resources :favorite_desserts, only: [:create]
+  resources :favorite_desserts, only: [:create, :update]
   
 end
