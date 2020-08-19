@@ -1,6 +1,6 @@
 class UsersController < ApplicationController 
 
-    before_action :authentication_required, :current_user, only: [:home]
+    before_action :authentication_required, :current_user, only: [:home, :show]
 
     def new 
         @user = User.new
@@ -19,6 +19,9 @@ class UsersController < ApplicationController
             flash[:errors] = @user.errors.full_messages
             render new_user_path
         end 
+    end 
+
+    def show 
     end 
 
 
