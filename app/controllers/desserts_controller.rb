@@ -8,8 +8,6 @@ class DessertsController < ApplicationController
     end 
 
     def new 
-        # will not let you create a new dessert if you are not logged in
-        return head(:forbidden) unless session.include? :user_id
         @dessert=Dessert.new
     end 
 
@@ -20,7 +18,6 @@ class DessertsController < ApplicationController
     def create
         @dessert=Dessert.new(dessert_params)
         if @dessert.valid?
-            # @dessert.photo.attach(params[:dessert][:photo])
             @dessert.save 
             redirect_to dessert_path(@dessert)
         else 
@@ -28,9 +25,9 @@ class DessertsController < ApplicationController
         end 
     end 
 
-     # Put in Validations
+   
     def edit 
-        # only if you created the dessert
+        
     end 
 
     def update
