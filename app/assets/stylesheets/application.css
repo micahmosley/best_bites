@@ -90,12 +90,31 @@
     font-size: 20px;
   }
   
-  img {
+  .show {
       width: 400px;
       height: 400px;
   }
 
-  
+  .top {
+      float: right;
+      
+      width: 100px;
+      height: 100px;
+  }
+  .bite {
+      clear: both;
+      
+      
+  }
+  .row {
+      display: flex;
+  }
+
+  .column {
+      flex: 50%;
+  }
+
+ 
 
 
   

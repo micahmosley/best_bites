@@ -1,6 +1,7 @@
+
 <h1><%=@dessert.name%></h1><br><br>
 
-<image src="<%=(url_for(@dessert.photo))%>"><br><br>
+<image class="show" src="<%=(url_for(@dessert.photo))%>"><br><br>
 
 <h1><%=link_to "Recipe", @dessert.recipe, target: :_blank%></h1>
 <br>
@@ -10,5 +11,6 @@
 <% else %> 
     <%= render "favorite"%>
 <% end%>
+
 
 
