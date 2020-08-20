@@ -1,12 +1,27 @@
-<br>
-<br>
-<h1>Top Ten Meals</h1>
-<br>
-<br>
-<% @top_ten.each do |meal|%>
-    <ol>
-    <p><%=meal.name%></p>
-    <p><%="#{meal.number_of_favorites} favorites!!!"%></p>
-    <p><%= link_to "See #{meal.name}", meal_path(meal)%></p><br><br><br><br>
-    </ol>
+<div class="row">
+<div class="column">
+<ol>
+<% @top_five.each do |meal|%>
+    <li class="bite">
+    <image class="top" src="<%=(url_for(meal.photo))%>">
+    <%=meal.name%><br>
+    <%="#{meal.number_of_favorites} favorites!!!"%><br>
+    
+    <%= link_to "See #{meal.name}", meal_path(meal)%><br><br><br>
+    </li>
 <%end%>
+</ol>
+</div>
+<div class="column">
+<ol start="6">
+<% @second_five.each do |meal|%>
+    <li class="bite">
+    <image class="top" src="<%=(url_for(meal.photo))%>">
+    <%=meal.name%><br>
+    <%="#{meal.number_of_favorites} favorites!!!"%><br>
+    <%= link_to "See #{meal.name}", meal_path(meal)%><br><br><br>
+    </li>
+<%end%>
+</ol>
+</div>
+</div>
