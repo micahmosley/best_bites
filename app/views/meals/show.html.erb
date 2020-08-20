@@ -2,7 +2,8 @@
 
 <image src="<%=(url_for(@meal.photo))%>"><br><br>
 
-<%=link_to "recipe", @meal.recipe, target: :_blank%>
+<h1><%=link_to "Recipe", @meal.recipe, target: :_blank%></h1>
+<br>
 
 <% if @fav_meal.meal_id==@meal.id%>
     <h1> Delicious! This is your Favorite Meal! </h1><br>

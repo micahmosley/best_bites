@@ -1,6 +1,7 @@
 class UsersController < ApplicationController 
 
-    before_action :authentication_required, :current_user, only: [:home, :show]
+    before_action :authentication_required, :current_user, except: [:new, :create]
+    before_action :find_user, only: [:edit, :update]
 
     def new 
         @user = User.new
@@ -24,8 +25,20 @@ class UsersController < ApplicationController
     def show 
     end 
 
+    def edit 
+    end 
+
+    def update 
+        @user.update(user_params)
+        @user.save
+        redirect_to user_path(@user)
+    end 
 
     private 
+
+    def find_user
+        @user = User.find(params[:id])
+    end
 
     def user_params 
         params.require(:user).permit(:first_name, :last_name, :username, :password)

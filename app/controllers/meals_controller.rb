@@ -41,15 +41,11 @@ class MealsController < ApplicationController
     
     end
 
-    # Put in Validations
-    def delete
-        # only if you created the dessert
-        @meal.delete 
-        redirect_to :meals_path
-    end 
+
 
     def top_ten 
-        @top_ten=Meal.top_ten
+        @top_five=Meal.top_ten.slice(0,5)
+        @second_five=Meal.top_ten.slice(5,10)
     end 
 
     private 
