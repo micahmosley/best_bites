@@ -3,6 +3,7 @@
 <h1><%=@meal.name%></h1><br><br>
 
 <image src="<%=(url_for(@meal.photo))%>"><br><br>
+<h2>Current Favorites: <%=@meal.favorite_meals.length%></h2>
 
 <h1><%=link_to "Recipe", @meal.recipe, target: :_blank%></h1>
 <br>
