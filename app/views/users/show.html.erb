@@ -10,6 +10,8 @@
     <p class="desc"> Your current favorite meal is <%=link_to Meal.find(@fav_meal.meal_id).name, meal_path(Meal.find(@fav_meal.meal_id))%></p>
     <image class="show" src="<%=(url_for(Meal.find(@fav_meal.meal_id).photo))%>"><br><br>
     <% end %>
+    <br>
+    <br>
 <% if @current_user.favorite_dessert %>
     <% @fav_dessert=FavoriteDessert.find_by(user_id: @current_user.id)%>
     <p class="desc"> Your current favorite dessert is <%=link_to Dessert.find(@fav_dessert.dessert_id).name, dessert_path(Dessert.find(@fav_dessert.dessert_id))%></p>
