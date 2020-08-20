@@ -15,12 +15,24 @@
  */
 
 
+html {
+  background-image: url("background3.jpeg");
+  background-color: #cccccc;
+}
+
+
+
  body {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 16px;
     color: #3e3e3e;
-    margin: 0;
     text-align: center;
+    margin: 2% 18% ;
+    padding: 2%;
+    border-color: #2435cc;
+    border-width: 30px;
+    border-style: solid;
+    background-color: white;
   }
   
 
