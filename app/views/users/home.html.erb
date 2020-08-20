@@ -2,16 +2,22 @@
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
 
 <% if @current_user == User.last %>
-    <h2>Welcome to Best Bites, <%= @current_user.first_name%>!</h2>
-    <h3>Best Bites is a simple web app that allows its users to post a favorite meal and dessert, along with their recipes!<br>
+    <h1>Welcome to Best Bites, <%= @current_user.first_name%>!</h1>
+    <br>
+    <p>Best Bites is a simple web app that allows its users to post a favorite meal and dessert, along with their recipes!<br>
     Simply browse through our lists of user-created items and choose what best suits you, OR create your own!<br>
     Then we will see which meals and desserts are most favored in the community!<br>
-    Click on any of the tabs above to get started!</h3>
+    Click on any of the tabs above to get started!</p>
 <% else %>
-    <h2>Welcome back to Best Bites, <%= @current_user.first_name%>!</h2>
-    <h3>We are glad you decided to join us again!<br>
-    Click on any of the tabs above to continue!</h3>
+    <h1>Welcome back to Best Bites, <%= @current_user.first_name%>!</h1>
+    <br>
+    <p>We are glad you decided to join us again!<br>
+    Click on any of the tabs above to continue!</p>
 <% end %>
 <br>

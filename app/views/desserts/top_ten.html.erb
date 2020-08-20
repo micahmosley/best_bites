@@ -1,9 +1,12 @@
-<ol>
+<br>
+<br>
+<h1>Top Ten Desserts</h1>
+<br>
+<br>
 <% @top_ten.each do |dessert|%>
-    <li>
-    <%=dessert.name%><br>
-    <%="#{dessert.number_of_favorites} favorites!!!"%><br>
-    <%= link_to "See #{dessert.name}", dessert_path(dessert)%><br><br><br>
-    </li>
+    <ol>
+    <p><%=dessert.name%></p>
+    <p><%="#{dessert.number_of_favorites} favorites!!!"%></p>
+    <p><%= link_to "See #{dessert.name}", dessert_path(dessert)%></p><br><br><br><br>
+    </ol>
 <%end%>
-</ol>

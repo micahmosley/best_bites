@@ -1,6 +1,9 @@
+<br>
+<br>
+<br>
 <h1><%= @current_user.full_name%></h1>
-
-
+<br>
+<br>
 <% @fav_dessert=FavoriteDessert.find_by(user_id: @current_user.id)%>
 <% if @current_user.favorite_meal %>
     <% @fav_meal=FavoriteMeal.find_by(user_id: @current_user.id)%>
