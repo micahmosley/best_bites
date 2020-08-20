@@ -1,13 +1,19 @@
+<br>
+<br>
+<h1>Top Ten Desserts</h1>
+<br>
+<br>
+
+
 <div class="row">
 <div class="column">
 <ol>
 <% @top_five.each do |dessert|%>
     <li class="bite">
     <image class="top" src="<%=(url_for(dessert.photo))%>">
-    <%=dessert.name%><br>
-    <%="#{dessert.number_of_favorites} favorites!!!"%><br>
-    
-    <%= link_to "See #{dessert.name}", dessert_path(dessert)%><br><br><br>
+    <h3><%=dessert.name%></h3>
+    <p><%="#{dessert.number_of_favorites} favorites!!!"%></p>
+    <p><%= link_to "See #{dessert.name}", dessert_path(dessert)%></p><br><br><br><br>
     </li>
 <%end%>
 </ol>
@@ -17,9 +23,9 @@
 <% @second_five.each do |dessert|%>
     <li class="bite">
     <image class="top" src="<%=(url_for(dessert.photo))%>">
-    <%=dessert.name%><br>
-    <%="#{dessert.number_of_favorites} favorites!!!"%><br>
-    <%= link_to "See #{dessert.name}", dessert_path(dessert)%><br><br><br>
+    <h3><%=dessert.name%></h3>
+    <p><%="#{dessert.number_of_favorites} favorites!!!"%></p>
+    <p><%= link_to "See #{dessert.name}", dessert_path(dessert)%></p><br><br><br><br>
     </li>
 <%end%>
 </ol>
