@@ -19,15 +19,17 @@
 </ol>
 </div>
 <div class="column">
-<ol start="6">
-<% @second_five.each do |meal|%>
-    <li class="bite">
-    <image class="top" src="<%=(url_for(meal.photo))%>">
-    <h3><%=meal.name%></h3>
-    <p><%="#{meal.number_of_favorites} favorites!!!"%></p>
-    <p><%= link_to "See #{meal.name}", meal_path(meal)%></p><br><br><br><br>
-    </li>
+<% if Meal.top_ten.length >5%>
+    <ol start="6">
+    <% @second_five.each do |meal|%>
+        <li class="bite">
+        <image class="top" src="<%=(url_for(meal.photo))%>">
+        <h3><%=meal.name%></h3>
+        <p><%="#{meal.number_of_favorites} favorites!!!"%></p>
+        <p><%= link_to "See #{meal.name}", meal_path(meal)%></p><br><br><br><br>
+        </li>
+    <%end%>
+    </ol>
 <%end%>
-</ol>
 </div>
 </div>
