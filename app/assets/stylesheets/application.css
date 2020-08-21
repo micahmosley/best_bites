@@ -124,6 +124,9 @@ html {
       flex: 50%;
   }
 
+  .error{
+    color: #cc2424;
+  }
  
 
 

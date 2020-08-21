@@ -1,6 +1,6 @@
 <%if @dessert.errors %>
     <%@dessert.errors.full_messages.each do |message|%>
-        <h1>ERROR: <%=message%></h1>
+        <h1 class="error">ERROR: <%=message%></h1>
     <%end%>
 <%end%>
 
